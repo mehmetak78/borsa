@@ -1,0 +1,29 @@
+$font-stack: Arial, Helvetica, sans-serif;
+$light-color: #f4f4f4;
+$primary-color: #397206;
+$secondary-color: #ff8700;
+$navbar-color1:#396206;
+$navbar-color2:#829D5F;
+$button-color1:#598236;
+$button-color2:#829D5F;
+$alert-color: #396206;
+$alert-bg: #929D5F;;
+
+
+
+// Set text color based on bg
+@function set-text-color($color) {
+  @if(lightness($color) > 70) {
+    @return #333;
+  } @else {
+    @return #fff;
+  }
+}
+
+// Set background & text color
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color)
+}
+
+

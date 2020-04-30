@@ -1,0 +1,88 @@
+//@media(max-width: 768px) {
+//  .navbar-mak {
+//    height:auto;
+//  }
+//}
+
+
+@media screen and (max-width: 1024px) {
+  nav {
+    .nav-links {
+      width: 52%;
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .navbar {
+    .nav-links {
+      position: absolute;
+      text-align: left;
+      top: 100%;
+      left: 0;
+      margin: 0;
+      flex-direction: column;
+      background: linear-gradient(180deg, rgba($color-bg-navbar2,0.5) 0%, $color-bg-navbar1 100%);
+      width: 100%;
+      transform: scale(1, 0);
+      transform-origin: top;
+      transition: transform 400ms ease-in-out;
+      padding: 0;
+      list-style: none;
+      z-index: 999;
+      li {
+        padding: 1em;
+        margin: 0;
+
+        a {
+          opacity: 0;
+          transition: opacity 400ms ease-in-out;
+
+          &::after {
+            border: none;
+          }
+
+        }
+        &:hover{
+          color: black;
+          background: rgba($color-bg-navbar1,1);
+        }
+      }
+
+    }
+    .nav-active  {
+      transform: scale(1, 1);
+      li {
+        a {
+          opacity: 1;
+          transition: opacity 150ms ease-in-out 250ms;
+        }
+      }
+    }
+    .nav-btn {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+
+
+  .nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+  }
+  .nav-toggle-label span::before, .nav-toggle-label span::after {
+    position: absolute;
+    content: "";
+  }
+  .nav-toggle-label span::before {
+    bottom: 7px;
+  }
+  .nav-toggle-label span::after {
+    top: 7px;
+  }
+}

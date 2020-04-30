@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital@1&display=swap');
+@import "config";
+@import "utilities";
+@import "components";
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.mainPage {
+  transition: transform ease-in-out 400ms;
+}
+
+.navbar {
+  background: linear-gradient(180deg, $color-bg-navbar1 0%, $color-bg-navbar2 100%);
+  height: 3.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  h1 {
+    margin:0;
+  }
+  text-align: center;
+  .logo {
+    //margin: 0 2em;
+  }
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    margin: 0 5em;
+
+    li {
+      padding: 0;
+      list-style: none;
+      margin-left: 3em;
+      margin-bottom: 0;
+      position: relative;
+
+      a {
+        color: $color-white;
+        text-decoration: none;
+        font-size: 1.2rem;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 1.5em;
+          left: 0;
+          width: 100%;
+          border-top: 4px solid $color-menu-hover;
+          transform: scale(0, 0);
+          transition: all ease-in-out 250ms;
+        }
+        &:hover {
+          color: $color-menu-hover;
+
+          &::after {
+            transform: scale(1, 1);
+          }
+        }
+      }
+    }
+  }
+  .nav-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1rem;
+    height: 100%;
+    display: none;
+
+    .nav-btn-line, .nav-btn-line::before, .nav-btn-line::after {
+      display: block;
+      background: white;
+      height: 2px;
+      width: 1.5em;
+      border-radius: 2px;
+      position: relative;
+    }
+    .nav-btn-line::before, .nav-btn-line::after {
+      position: absolute;
+      content: "";
+    }
+    .nav-btn-line::before {
+      bottom: 7px;
+    }
+    .nav-btn-line::after {
+      top: 7px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.dropdown-menu-mak {
+  background: $color-bg-navbar2;
+  box-shadow: 0 -4px 25px 0px $color-bg-navbar1;
+  border: none;
+  .dropdown-item-mak {
+    color: white;
+    &:hover {
+      background-color: $color-bg-navbar1;
+    }
+  }
+}
+
+.statusBar-mak {
+  background: linear-gradient(270deg, $color-bg-navbar2 0%, $color-bg-navbar1 100%);
+  height: 1.5rem;
+  padding: 0;
+  margin: 0;
+  .navbar-text-mak {
+    font-size: 0.7rem;
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
+    padding: 0 0 0  10px;
+  }
+}
+
+.container-mak {
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card-mak {
+  min-width: 20em;
+  max-width: 40em;
+  box-shadow: 0 0 1em 1px rgba(0, 0, 0, 0.5);
+  padding: 2em 2rem;
+  margin: 1rem;
+  display: grid;
+  grid-column-gap: 1.5em;
+  grid-template:
+          "img title" min-content
+          "img content" auto
+          "img footer" auto / 1fr 3fr;
+  .card-img {
+    grid-area: img;
+    max-width: 100%;
+    //min-width: 50%;
+    align-self: start;
+    justify-self: center;
+  }
+  .card-title {
+    grid-area: title;
+    margin: 0;
+  }
+  .card-content {
+    grid-area: content;
+  }
+  .card-footer {
+    grid-area: footer;
+    margin-top: 1em;
+    padding: 0;
+    background:  none;
+    border: none;
+    a {
+      cursor: pointer;
+      text-decoration: none;
+      background: none;
+    }
+  }
+}
+
+
+.form-container {
+  margin: 2rem auto;
+  max-width: 600px;
+  padding: 2rem;
+  box-shadow: 0 0 1em 1px rgba(0, 0, 0, 0.5);
+  h1 {
+    text-align: center;
+    font-weight: 900;
+    padding-bottom: 2rem;
+    color: $color-black;
+  }
+
+  .btn {
+    //background: rgb(36,149,146);
+    background: $color-button1;
+    border: none;
+    box-shadow: 0px 4px 3px -2px rgba(0,0,0,.75);
+    color: white;
+    transition: all ease-in-out 200ms;
+    &:hover {
+      transform: translatey(-1px);
+      box-shadow: 0px 18px 8px -10px rgba(0,0,0,.6);
+    }
+  }
+}
+
+.alert {
+  padding: 1rem;
+  margin: 1rem 0;
+  border: none;
+  background: rgb($color-bg-alert-bg,0.4);
+  color: $color-alert;
+}
+
+@import "mobile";
